@@ -1,0 +1,49 @@
+/* select every type of element */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #d68455;
+    margin: 0;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* display flex is done to display the keys side-by-side */
+  .piano {
+    display: flex;
+  }
+  
+  /* css variables used here */
+  
+  .key {
+    height: calc(var(--width) * 4);
+    width: var(--width);
+  }
+  
+  .whiteKey {
+    --width: 50px;
+    background-color: white;
+    border: 1px solid #333;
+  }
+  
+  /* change white key color when pressed */
+  .whiteKey.active {
+    background-color: #CCC;
+  }
+  
+  .blackKey {
+    --width: 30px;
+    background-color: black;
+    margin-left: calc(var(--width) / -2);
+    margin-right: calc(var(--width) / -2);
+    z-index: 2;
+  }
+  
+  /* change black key color when pressed */
+  .blackKey.active {
+    background-color: #333;
+  }
